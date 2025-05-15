@@ -35,3 +35,14 @@ URL "amqp://guest:guest@localhost:5672" yang sama pada program publisher dan sub
 ![/run-subscriber](./images/run-subscriber.jpg)
 
 Pada kedua gambar di atas, kita dapat melihat komunikasi antara publisher dan subscriber dengan memanfaatkan RabbitMQ untuk melihat koneksinya. Pada gambar pertama, publisher akan mengirimkan 5 data ke message broker ketika command cargo run dijalankan (jika terdapat subscriber yang memiliki koneksi dengan publisher). Nantinya, pesan tersebut akan diproses dan diterima oleh subscriber, seperti yang ada pada gambar kedua.
+
+---
+
+## Monitoring chart based on publisher
+
+![/monitoring-chart](./images/monitoring-chart.jpg)
+
+Spike yang terlihat pada grafik Message rates di RabbitMQ UI terjadi karena pada saat itu aplikasi publisher dijalankan menggunakan cargo run, yang kemudian mengirimkan 5 pesan ke antrean. Karena subscriber sedang aktif dan terhubung ke broker, pesan-pesan tersebut langsung dikonsumsi secara real-time. Setiap kali pesan dikirim dan diterima, terjadi peningkatan sementara (spike) dalam laju pesan (message rate), yang terekam sebagai lonjakan pada grafik tersebut. Ini menunjukkan bahwa sistem bekerja sebagaimana mestinya: publisher mengirim pesan, subscriber menerima, dan RabbitMQ mencatat aktivitas tersebut.
+
+---
+
