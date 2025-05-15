@@ -21,3 +21,7 @@ Program publisher yang ditunjukkan akan mengirimkan lima (5) data dalam satu kal
 URL "amqp://guest:guest@localhost:5672" yang sama pada program publisher dan subscriber menunjukkan bahwa kedua program tersebut terhubung ke server message broker AMQP yang sama. Kesamaan URL ini mengindikasikan bahwa kedua program berkomunikasi melalui broker pesan yang identik, yang berada pada mesin lokal (localhost) dan port 5672, dengan menggunakan kredensial autentikasi yang sama (username: guest, password: guest). Hal ini memungkinkan terjadinya komunikasi asinkron antara publisher dan subscriber, di mana publisher mengirimkan pesan ke antrian "user_created" pada broker, dan subscriber menerima pesan dari antrian yang sama. Dengan demikian, keduanya tidak perlu berkomunikasi secara langsung atau mengetahui keberadaan satu sama lain, tetapi hanya perlu mengetahui detail koneksi ke broker pesan yang menjadi perantara komunikasi mereka, menciptakan arsitektur yang loosely coupled dan tangguh.
 
 ---
+
+## Running RabbitMQ as Message Broker
+
+![/running-RabbitMQ](./images/running-RabbitMQ.jpg)
