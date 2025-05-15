@@ -25,3 +25,13 @@ URL "amqp://guest:guest@localhost:5672" yang sama pada program publisher dan sub
 ## Running RabbitMQ as Message Broker
 
 ![/running-RabbitMQ](./images/running-RabbitMQ.jpg)
+
+---
+
+## Sending and Processing Event
+
+![/run-publisher](./images/run-publisher.jpg)
+
+![/run-subscriber](./images/run-subscriber.jpg)
+
+Pada kedua gambar di atas, kita dapat melihat komunikasi antara publisher dan subscriber dengan memanfaatkan RabbitMQ untuk melihat koneksinya. Pada gambar pertama, publisher akan mengirimkan 5 data ke message broker ketika command cargo run dijalankan (jika terdapat subscriber yang memiliki koneksi dengan publisher). Nantinya, pesan tersebut akan diproses dan diterima oleh subscriber, seperti yang ada pada gambar kedua.
